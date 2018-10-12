@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Here's all the Guardians</h1>
+        <% if(guardians.length === 0){%>
+            <p class="error-message">Sorry, there are no guardians to display</p>
+        <%} else {%>
+        <ul>
+            <% guardians.forEach(guardian => {%>
+                <li>
+                    <a href="/guardians/<%=guardian._id%>"><%=guardian.name%></a>
+                </li>
+            <%})%>
+        </ul>
+        <%}%>
+    </body>
+</html>
