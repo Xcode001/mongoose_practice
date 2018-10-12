@@ -1,5 +1,5 @@
 // 1. Require your node modules
-
+const mongoose = require('mongoose')
 // 2. Require your model (and possibly your extra data source);
 
 // 3. Connect your database and collection name
