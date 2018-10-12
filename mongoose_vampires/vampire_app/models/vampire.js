@@ -11,4 +11,4 @@ const vampireSchema = mongoose.Schema({
     victims: {type: Number, min: 0}
 })
 
-module.exports = mongoose.model('Vampires', vampireSchema)
+module.exports = mongoose.model('Vampire', vampireSchema)
