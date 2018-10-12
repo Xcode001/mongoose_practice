@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Edit Your Fruit</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    <h1>Edit Your Fruit</h1>
+    <form action="/fruits/<%=fruit._id%>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="<%=fruit.name%>"/>
+        Color: <input type="text" name="color" value="<%=fruit.color%>"/>
+        Ready to Eat? <input type="checkbox" name="readyToEat"checked />
+        <input type="submit"/>
+    </form>
+    </body>
+</html>

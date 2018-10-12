@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Here's your fruit</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Here's your fruit detail</h1>
+        <h2>Name: <%=fruit.name%></h1>
+        <p>Color: <%=fruit.color%></p>
+        <p>Ripeness: <%=fruit.readyToEat ? 'Ripe' : 'Not Ripe' %></p>
+        <a style="display: block"href="/fruits/<%=fruit._id%>/edit">Edit This Fruit</a>
+        <a style="display: block"href="/fruits">Go Back to All Fruits</a>
+        <a style="display: block"href="/">Go Back Home</a>
+        <a style="display: block"href="/fruits/new">Create a New Fruit</a>
+        <form action="/fruits/<%=fruit._id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete <%=fruit.name%>"/>
+        </form>
+    </body>
+</html>

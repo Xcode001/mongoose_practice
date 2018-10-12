@@ -8,6 +8,16 @@
     </head>
     <body>
         <h1>Here's all the fruits</h1>
-        <a href="/">Go Back to homepage</a>
+        <a style="display: block"href="/">Go Back to homepage</a>
+        <a style="display: block"href="/fruits/new">Create a New Fruit</a>
+        <ol>    
+            <% if(fruits.length > 0){%>
+            <%fruits.forEach((fruit) => {%>
+                <li><a href="/fruits/<%=fruit.id%>"><%=fruit.name%></a></li>
+            <%})%>
+            <%} else {%>
+                <p>There are no fruits to display</p>
+            <%}%>
+        </ol>
     </body>
 </html>
