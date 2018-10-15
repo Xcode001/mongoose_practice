@@ -51,17 +51,27 @@ mongoose.connect(connectionString, {useNewUrlParser: true})
 //     else console.log(response)
 // })
 
-Vampire.find({
-    victims: {$ne: 210234}
-}, (error, response) => {
-    if(error) console.log(error)
-    else console.log(response)
-})
+// Vampire.find({
+//     victims: {$ne: 210234}
+// }, (error, response) => {
+//     if(error) console.log(error)
+//     else console.log(response)
+// })
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
 
 /////////////////////////////////////////////////
 // ### Select with OR
+
+Vampire.find({
+    $or: [{loves: 'frilly shirtsleeves' }, {loves: 'frilly collars'}]
+}, (error, response) => {
+    if(error){
+        console.log(error)
+    } else {
+        console.log(response)
+    }
+})
 
 /////////////////////////////////////////////////
 //### Select objects that match one of several values

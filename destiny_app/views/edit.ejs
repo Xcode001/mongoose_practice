@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Edit <%=guardian.name%></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Edit <%=guardian.name%></h1>
+        <ul>
+            <li>
+                <a href="/">Back to Home Page</a>
+            </li>
+            <li>
+                <a href="/guardians">Back to All Guardians</a>
+            </li>
+            <li>
+                <a href="/guardians/<%=guardian._id%>">Go back to Profile Page</a>
+            </li>
+        </ul>
+        <hr />
+        <form action="/guardians/<%=guardian._id%>?_method=PUT" method="POST">
+            <div>
+            Name: <input type="text" name="name" value="<%=guardian.name%>"/>
+            </div>
+
+            <div>
+            Class: <select name="class">
+                        <option selected disabled hidden><%=guardian.class%></option>
+                        <option value="Warlock">Warlock</option>
+                        <option value="Hunter">Hunter</option>
+                        <option value="Titan">Titan</option>
+                    </select>
+            </div>
+            <div>
+                <input type="submit" value="Edit <%=guardian.name%>" />
+            </div>
+        </form>
+    </body>
+</html>

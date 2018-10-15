@@ -40,4 +40,36 @@ guardianRouter.get('/:id', (req, res) => {
     })
 })
 
+guardianRouter.get('/:id/edit', (req, res) => {
+    Guardian.findById(req.params.id, (error, guardian) => {
+        if(error){
+            console.log(error)
+            res.status(500).send('Something Went Wrong')
+        } else {
+            res.render('edit.ejs',{guardian})
+        }
+    })
+})
+
+guardianRouter.delete('/:id', (req, res) => {
+    Guardian.findByIdAndDelete(req.params.id, (error, response) => {
+        if(error){
+            console.log(error)
+            res.status(500).send('Something Went Wrong')
+        } else {
+            res.redirect('/guardians')
+        }
+    })
+})
+
+guardianRouter.put('/:id', (req, res) => {
+    Guardian.findByIdAndUpdate(req.params.id, req.body, (error, updatedGuardia) => {
+        if(error){
+            console.log(error)
+            res.status(500).send('Something Went Wrong')
+        } else {
+            res.redirect('/guardians/' + req.params.id)
+        }
+    })
+})
 module.exports = guardianRouter

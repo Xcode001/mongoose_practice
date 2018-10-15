@@ -4,13 +4,31 @@
         <title><%=guardian.name%>'s Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
     </head>
     <body>
-
-        <h2><%=guardian.name%>'s Profile</h2>
+          <h1><%=guardian.name%>'s Profile</h1>
+        <ul>
+            <li>
+                <a href="/">Back to Home Page</a>
+            </li>
+            <li>
+                <a href="/guardians">Back to All Guardians</a>
+            </li>
+            <li>
+                <a href="/guardians/<%=guardian._id%>/edit">Edit This Guardian</a>
+            </li>
+            <li>
+                <a onclick="javascript:{document.getElementById('form').submit();}">Delete This Guardian</a>
+            </li>
+        </ul>
+        <hr />
         <p><b>Guardian Class:</b> <%=guardian.class%></p>
         <p><b>Intelligence Level:</b> <%=guardian.intelligence%></p>
         <p><b>Experience Level:</b> <%=guardian.experience_level%></p>
+
+        <form id="form"action="/guardians/<%=guardian._id%>?_method=DELETE" method="POST">
+            <input type="hidden" />
+        </form>
     </body>
 </html>
