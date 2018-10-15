@@ -10,8 +10,17 @@
         <h1><%=author.name%></h1>
         <ul>
             <li>
-                <a href="/authors">Go Back to all author</a>
+                <a href="/authors">Go Back to all authors</a>
+            </li>
+            <li>
+                <a href="/authors/<%=author._id%>/edit">Edit This author</a>
+            </li>
+            <li>
+                <a href="javascript:{document.getElementById('delete').submit();}">Delete this author</a>
             </li>
         </ul>
+        <form id="delete" action="/authors/<%=author._id%>?_method=DELETE" method="POST">
+            <input type="hidden" />
+        </form>
     </body>
 </html>
