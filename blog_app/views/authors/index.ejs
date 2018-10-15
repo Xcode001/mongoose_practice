@@ -15,11 +15,11 @@
         </ul>
         <hr />
         <main>
-            <ul>
+            <ol>
                 <% allAuthors.forEach(author => { %>
                     <li><a href="/authors/<%=author._id%>"><%= author.name %></a></li>
                 <% }) %>
-            </ul>
+            </ol>
         </main>
     </body>
 </html>

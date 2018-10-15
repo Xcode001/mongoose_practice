@@ -16,6 +16,9 @@ const express = require('express'),
     app.get('/', (req, res) => {
         res.render('index.ejs')
     })
+    app.get('*', (req, res) => {
+        res.status(404).render('404.ejs')
+    })
 
     app.listen(port, () => {
         console.log(`Server is listening at port: ${port}`)

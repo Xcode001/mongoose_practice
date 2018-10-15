@@ -1,6 +1,6 @@
  const mongoose = require('../db/mongoose')
 
- const authorSchema = mongoose.Schema({
+ const authorSchema = new mongoose.Schema({
     name: String
  })
 
