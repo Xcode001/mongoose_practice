@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const connectionString = 'mongodb://localhost/test'
-mongoose.connect(connectionString)
+mongoose.connect(connectionString, {useNewUrlParser: true})
 
 mongoose.connection.on('connected', () => {
     console.log(`Mongoose is connected to ${connectionString}`)

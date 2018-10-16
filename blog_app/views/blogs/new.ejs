@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Create a New Blog</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <h1>Create a new blog below</h1>
+
+        <form action="/blogs" method="POST">
+            <div> Title: 
+                <input type="text" name="title" />
+            </div>
+            <div> Body:
+                <textarea rows="5" cols="25" name="body"></textarea>
+            </div>
+            <div>
+                <select name="authorId">
+                    <% allAuthors.forEach(author => {%>
+                        <option value="<%=author._id%>"><%=author.name%></option>
+                    <%})%>    
+                </select>
+            </div>
+            <div>
+            <input type="submit" value="Create New Blog Post" />
+            </div>
+        </form>
+    </body>
+</html>

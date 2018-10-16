@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Viewing <%= blog.title%></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <h1><%=blog.title%></h1>
+        <p><%=blog.body%></p>
+        <p>Author: <%=author.name%></p>
+        <ul>
+            <li>
+                <a href="/blogs">Back to All Blogs</a>
+            </li>
+            <li>
+                <a href="/blogs/<%=blog._id%>/edit">Edit This Blog</a>
+            </li>
+            <li>
+                <a href="javascript:{document.getElementById('delete').submit();}">Delete This Blog</a>
+            </li>
+        </ul>
+        <form id="delete" action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+            <input type="hidden" />
+        </form>
+    </body>
+</html>

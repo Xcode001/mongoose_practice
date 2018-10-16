@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Editing <%=blog.title%></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Edit <%=blog.title%></h1>
+        <form action="/blogs/<%=blog._id%>?_method=PUT" method="POST">
+            <div> Title:
+                <input type="text" name="title" value="<%=blog.title%>" />
+            </div>
+            <div> Body:
+                <textarea rows="5" cols="25" name="body"><%=blog.body%></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Edit Blog"/>
+            </div>
+        </form>
+    </body>
+</html>

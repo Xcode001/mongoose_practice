@@ -8,16 +8,25 @@
     </head>
     <body>
         <h1>Here's all the blogs</h1>
+
         <ul>
             <li>
                 <a href="/">Back Home</a>
             </li>
+
             <li>
-                <a href="/author">See all Authors</a>
+                <a href="/authors">See all Authors</a>
             </li>
+            
             <li>
-                <a href="Create a New Blog"></a>
+                <a href="/blogs/new">Create a New Blog</a>
             </li>
         </ul>
+
+        <ol>
+            <% allBlogs.forEach(blog => {%>
+                <li><a href="/blogs/<%=blog._id%>"><%=blog.title%></a></li>
+            <%})%>
+        </ol>
     </body>
 </html>
