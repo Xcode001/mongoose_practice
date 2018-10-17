@@ -8,6 +8,16 @@
     </head>
     <body>
         <h1><%=author.name%></h1>
+        <% if(author.blogs.length > 0){%>
+            <p>Blogs by this Author</p>
+            <ul>
+                <% author.blogs.forEach(blog => {%>
+                    <li>
+                        <a href="/blogs/<%=blog._id%>"><%=blog.title%></a>
+                    </li>
+                <%})%>
+            </ul>
+        <%}%>
         <ul>
             <li>
                 <a href="/authors">Go Back to all authors</a>
