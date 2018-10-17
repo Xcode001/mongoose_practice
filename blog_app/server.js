@@ -1,10 +1,12 @@
 const express = require('express'),
     app = express(),
-    port = process.env.PORT || 3000,
+    port = process.env.PORT || 4000,
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
+    session = require('express-session'),
     blogsRouter = require('./controllers/blogs'),
-    authorsRouter = require('./controllers/authors')
+    authorsRouter = require('./controllers/authors'),
+    authController = require('./controllers/auth')
 
 
     app.use(methodOverride('_method'))
@@ -12,7 +14,12 @@ const express = require('express'),
     app.use(express.static(__dirname + '/public/'))
     app.use('/blogs', blogsRouter)
     app.use('/authors', authorsRouter)
-
+    app.use('/auth', authController)
+    app.use(session({
+        secret: 'phoenix',
+        resave: false,
+        saveUninitialized: false
+    }))
     app.get('/', (req, res) => {
         res.render('index.ejs')
     })
